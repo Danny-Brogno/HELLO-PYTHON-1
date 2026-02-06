@@ -238,3 +238,51 @@ else:
     
 print("--------------------------------------------------------------------------------------------")
 
+my_list = [1,2,3,4,5]
+my_list.insert(5,6)
+my_list.insert(0,0)
+print(my_list)
+
+print("--------------------------------------------------------------------------------------------")
+
+# Create a list of test scores
+scores = [8, 8, 8, 8, 8, 7, 7, 9, 9]
+
+# Calculate the average score using floor division
+total_score = sum(scores)
+num_tests = len(scores)
+average_score = total_score // num_tests
+
+print(average_score)
+
+# Determine the grade using comparison operators
+if average_score == 10:
+    grade = "Ottimo"
+elif average_score == 9:
+    grade = "Distinto"
+elif average_score == 8:
+    grade = "Buono"
+elif average_score == 7:
+    grade = "Discreto"
+elif average_score == 6:
+    grade = "Sufficiente"
+else:
+    grade = "Insufficiente"
+    
+print(grade)
+
+# This turns "Discreto" into "Discreto+"
+if average_score % 1 >= 0.5:
+    grade += "+"
+
+#Check if there is a lower average (than 5)
+if average_score <= 5:
+    print(f"Oh no, your average is insufficient -> {average_score}!")
+else:
+    print(f"Your average is looking good -> {average_score}!")
+    
+
+print("--------------------------------------------------------------------------------------------")
+
+
+print("--------------------------------------------------------------------------------------------")
