@@ -179,3 +179,62 @@ profile_desc = f"{modified_name} is {ageUser} years old, lives in {locationUser}
 print(profile_desc)
 
 print("--------------------------------------------------------------------------------------------")
+
+inputUserName = input("Enter your name: ").capitalize()
+inputUserLastname = input("Enter your lastname: ").capitalize()
+
+admins = [("Danny", "Brogno"), ("Franco", "Trentalance")]
+bannedPeople = [("Mario", "Rossi"), ("Pileria", "Feliway")]
+current_user = (inputUserName, inputUserLastname)
+
+if current_user in admins:
+    print(f"Welcome Admin {inputUserName} {inputUserLastname}!")
+elif current_user not in admins and current_user not in bannedPeople:
+    print(f"Welcome guest {inputUserName} {inputUserLastname}! You are cleared to enter.")
+else:
+    print("ACCESS DENIED: You are on the blacklist.")
+    
+print("--------------------------------------------------------------------------------------------")
+
+def is_even(number):
+    return number % 2 == 0    
+print(is_even(6))
+
+print("--------------------------------------------------------------------------------------------")
+
+horror = input("Do you like horror films (yes/no): ").lower() == "yes"
+thriller = input("Do you like thriller films (yes/no): ").lower() == "yes"
+comedy = input("Do you like comedy films (yes/no): ").lower() == "yes"
+
+if horror and thriller and not comedy:
+    genre = "Horror-thriller"
+elif comedy and horror and not thriller:
+    genre = "Horror-comedy"
+elif thriller and comedy and not horror:
+    genre = "Comedy-thriller"
+elif horror:
+    genre = "Horror"
+elif thriller:
+    genre = "Thriller"
+elif comedy:
+    genre = "Comedy"
+else:
+    genre = "Unknown"
+    
+if genre == "Horror-thriller":
+    print(f"Recommended movies for Horror-thriller: Prey, Alone, the Innocent")
+elif genre == "Horror-comedy":
+    print(f"Recommended movies for Horror-comedy: Jennifer's Body, Shaun of the Dead, Scary Movie")
+elif genre == "Comedy-thriller":
+    print(f"Recommended movies for Comedy-thriller: Knives our, Idiocracy, the Menu")
+elif genre == "Horror":
+    print(f"Recommended movies for horror: IT, Alone in the Dark, Saw")
+elif genre == "Thriller":
+    print(f"Recommended movies for thriller: American psyco, Zodiac, Split")
+elif genre == "Comedy":
+    print(f"Recommended movies for comedy: Without a paddle, Night shift, Naked Gun")
+else:
+    print(f"Sorry, we couldn't determine your movie preferences.")
+    
+print("--------------------------------------------------------------------------------------------")
+
