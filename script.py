@@ -284,5 +284,17 @@ else:
 
 print("--------------------------------------------------------------------------------------------")
 
+# TUPLE (IMMUTABLE list)
+names = ("danny", "karl", "tricsy", "rhyz", "buffy", "tricsy")
+for i in names:
+    print(i)
+if "tricsy" in names:
+    print(f"Tricsy is inside the Tuple!")
+else:
+    print(f"Tricsy is NOT inside the Tuple!")
+print(f"Tricsy ->  times in the Tuple: {names.count("tricsy")}")
+
+print("--------------------------------------------------------------------------------------------")
+
 
 print("--------------------------------------------------------------------------------------------")
