@@ -289,6 +289,9 @@ print("-------------------------------------------------------------------------
 # TUPLE (IMMUTABLE list -> cannot be edited, NOT unique (can have duplicates), ORDERED)
 
 names = ("danny", "karl", "tricsy", "rhyz", "buffy", "tricsy")
+extra = ("nanay", "emily")
+add_tuple = names + extra
+print(add_tuple)
 for i in names:
     print(i)
 if "tricsy" in names:
@@ -349,3 +352,42 @@ print(f"Updated Student IDs: {studentSetId}")
 
 print("--------------------------------------------------------------------------------------------")
 
+#DICTIONARY 
+#DICTIONARY 
+#DICTIONARY 
+empty_dictionary = {}
+
+my_dictionary = {
+    'name':"Danny",
+    'age': 30,
+    'city': "Rome",
+    'has_car': True
+}
+
+extra = {
+    'price': 35,
+    'location': "Edinburgh"
+}
+
+#merge 2 dictionaries
+my_dictionary.update(extra)
+
+edit_city = my_dictionary['city'] = "Verona"
+print(edit_city)
+print(my_dictionary['age'])
+print(f"------------------------------")
+print(f"PRINT THE KEYS: {my_dictionary.keys()}")
+print(f"PRINT THE VALUES: {my_dictionary.values()}")
+print(f"PRINT THE ITEMS: {my_dictionary.items()}")
+print(f"------------------------------")
+print(empty_dictionary, my_dictionary)
+print(f"------------------------------")
+
+for key in my_dictionary:
+    print(key, my_dictionary[key])
+
+print(f"------------------------------")
+for key, value in my_dictionary.items():
+    print(key, value)
+
+print("--------------------------------------------------------------------------------------------")
