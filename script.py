@@ -284,7 +284,10 @@ else:
 
 print("--------------------------------------------------------------------------------------------")
 
-# TUPLE (IMMUTABLE list)
+# TUPLE (IMMUTABLE list -> cannot be edited, NOT unique (can have duplicates), ORDERED)
+# TUPLE (IMMUTABLE list -> cannot be edited, NOT unique (can have duplicates), ORDERED)
+# TUPLE (IMMUTABLE list -> cannot be edited, NOT unique (can have duplicates), ORDERED)
+
 names = ("danny", "karl", "tricsy", "rhyz", "buffy", "tricsy")
 for i in names:
     print(i)
@@ -293,8 +296,56 @@ if "tricsy" in names:
 else:
     print(f"Tricsy is NOT inside the Tuple!")
 print(f"Tricsy ->  times in the Tuple: {names.count("tricsy")}")
+print(f"TUPLE: {names}")
+
+#LIST (can be edited, NOT unique (can have duplicates), ORDERED)
+#LIST (can be edited, NOT unique (can have duplicates), ORDERED)
+#LIST (can be edited, NOT unique (can have duplicates), ORDERED)
+
+myList1 = [1,2,3]
+myList2 = [4,5,6]
+
+myList3 = myList1 + myList2 
+
+print(f"LISTS: {myList3}")
+
+#SET (can be edited, unique (diplicates disappear), UNORDERED)
+#SET (can be edited, unique (diplicates disappear), UNORDERED)
+#SET (can be edited, unique (diplicates disappear), UNORDERED)
+
+mySet1 = {1, 2, 3}
+mySet2 = {4, 5, 6}
+
+mySets3 = mySet1 | mySet2
+
+print(f"SETS: {mySet1 | mySet2}")
+testSet = {1, 2, 2, 3, 3, 3}
+print(f"TEST DUCPLICATES IN SET: {testSet}")
+
+#FROZEN SET ->IMMUTABLE
+#FROZEN SET ->IMMUTABLE
+#FROZEN SET ->IMMUTABLE
+my_frozen_set = frozenset({1,2,3})
+print(my_frozen_set)
 
 print("--------------------------------------------------------------------------------------------")
 
+student1 = ("Danny", "Brogno", 15, 1)
+student2 = ("Tricsy", "Brogno", 14, 2)
+student3 = ("Rhyz", "Maclan", 13, 3)
+
+students = (student1, student2, student3)
+print(f"number of students: {len(students)}")
+print(f"Index of Tricsy Brogno: {students.index(student2)+1}")
+
+studentSetId = {19, 69, 100}
+studentCourses = {"Maths", "English", "Robotics"}
+print(f"Student IDs: {studentSetId}")
+print(f"Courses: {studentCourses}")
+
+new_students = {23, 88}
+studentSetId.update(new_students)
+print(f"Updated Student IDs: {studentSetId}")
 
 print("--------------------------------------------------------------------------------------------")
+
