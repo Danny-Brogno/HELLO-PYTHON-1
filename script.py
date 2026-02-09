@@ -460,3 +460,29 @@ for i in your_array:
     print(i)
 
 print("--------------------------------------------------------------------------------------------")
+
+#OBJECT ORIENTED PROGRAMMING:
+#OBJECT ORIENTED PROGRAMMING:
+#OBJECT ORIENTED PROGRAMMING:
+
+class Relationship:
+    classVariable = "I am a class variable under class Relationship"
+    def __init__(self, respect_level, communication_status):
+        self.respect_level = respect_level
+        self.communication_status = communication_status
+
+    def instance_method(self):
+        return f"I am an instance method. My values are: {self.respect_level} and {self.communication_status}"
+
+couple1 = Relationship("high", "honest") # "RESPECT LEVEL" -> "HIGH" and "communication status" - "Honest"
+couple2 = Relationship("medium", "deceptive")
+Relationship.classVariable
+
+print(couple1.respect_level, couple1.communication_status) # Accessing an attribute
+print(couple1.instance_method()) # Calling a method
+print(couple1.classVariable) # Accessing the class variable
+
+print(couple2.respect_level, couple2.communication_status) # Accessing an attribute
+print(couple2.instance_method()) # Calling a method
+
+print("--------------------------------------------------------------------------------------------")
