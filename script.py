@@ -421,18 +421,18 @@ print("-------------------------------------------------------------------------
 #LAMBDA function
 #LAMBDA function
 
-my_lambda = lambda a, b: a * b
-print(my_lambda(5, 6))# -> 30
+my_lambda = lambda a, b : a * b
+print(my_lambda(5, 6)) # -> 5 x 6 = 30
 
 your_lambda = lambda a, b, c : a + b + c
-print(your_lambda(1, 2, 3)) 
+print(your_lambda(1, 2, 3)) # -> 1 + 2 + 3 = 6
 
 def myfunc(n):
   return lambda a : a * n
 
 mydoubler = myfunc(2)
 
-print(mydoubler(11))
+print(mydoubler(11)) # -> 11 x 2 = 22
 
 print("--------------------------------------------------------------------------------------------")
 
@@ -453,5 +453,10 @@ print(f"This is the Array: {my_array}")
 # If you multiply a list by 2, it just doubles the size: [1,2,3,1,2,3]
 # If you multiply a NumPy array by 2, it does actual math!
 print(f"Array Math (Array * 2): {my_array * 2}")
+
+your_array = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+for i in your_array:
+    print(i)
 
 print("--------------------------------------------------------------------------------------------")
