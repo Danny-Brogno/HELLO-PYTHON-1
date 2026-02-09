@@ -1,13 +1,15 @@
+import numpy as np
+
 print("--------------------------------------------------------------------------------------------")
 
 x = 1
 y = 2
-sum = x + y
+total_xy = x + y
 subtraction = y - x
 multiplication = y * x 
 division = y / x 
 
-print(f"Sum -> 1+2={sum}   Subtraction -> 2-1={subtraction}   Multiplication -> 2x1={multiplication}   Division -> 2/1={division}")
+print(f"Sum -> 1+2={total_xy}   Subtraction -> 2-1={subtraction}   Multiplication -> 2x1={multiplication}   Division -> 2/1={division}")
 
 if x > y:
     print(f"{x} is bigger than {y}")
@@ -54,6 +56,10 @@ f = "awesome"
 def myFunction():
     print(f"Python is {f}")
 myFunction()
+
+def greet(name):
+    print(f"Hello {name}")
+greet("DANNY")
 
 print("--------------------------------------------------------------------------------------------")
 
@@ -272,7 +278,7 @@ else:
 print(grade)
 
 # This turns "Discreto" into "Discreto+"
-if average_score % 1 >= 0.5:
+if average_score / 1 >= 0.5:
     grade += "+"
 
 #Check if there is a lower average (than 5)
@@ -389,5 +395,63 @@ for key in my_dictionary:
 print(f"------------------------------")
 for key, value in my_dictionary.items():
     print(key, value)
+
+print("--------------------------------------------------------------------------------------------")
+
+# WHILE LOOP
+# WHILE LOOP
+# WHILE LOOP
+my_count = 0
+while my_count < 5:
+    print(my_count)
+    my_count += 1
+    
+# FOR LOOP
+# FOR LOOP
+# FOR LOOP
+    
+my_numbers = {1,2,3,4}
+for i in my_numbers:
+    print(i)
+
+
+print("--------------------------------------------------------------------------------------------")
+
+#LAMBDA function
+#LAMBDA function
+#LAMBDA function
+
+my_lambda = lambda a, b: a * b
+print(my_lambda(5, 6))# -> 30
+
+your_lambda = lambda a, b, c : a + b + c
+print(your_lambda(1, 2, 3)) 
+
+def myfunc(n):
+  return lambda a : a * n
+
+mydoubler = myfunc(2)
+
+print(mydoubler(11))
+
+print("--------------------------------------------------------------------------------------------")
+
+#NUMPY ARRAY
+#NUMPY ARRAY
+#NUMPY ARRAY
+
+# A standard Python List
+my_list = [1, 2, 3, 4, 5]
+
+# A NumPy Array (created from that list)
+my_array = np.array(my_list)
+
+print(f"This is the List: {my_list}")
+print(f"This is the Array: {my_array}")
+
+# THE COOL PART: Math is easier with Arrays
+# If you multiply a list by 2, it just doubles the size: [1,2,3,1,2,3]
+# If you multiply a NumPy array by 2, it does actual math!
+print(f"Array Math (Array * 2): {my_array * 2}")
 
 print("--------------------------------------------------------------------------------------------")
