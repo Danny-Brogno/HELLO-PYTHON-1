@@ -466,11 +466,16 @@ print("-------------------------------------------------------------------------
 #OBJECT ORIENTED PROGRAMMING:
 
 class Relationship:
+    # ATTRIBUTES are properties
     classVariable = "I am a class variable under class Relationship"
+    
+    # A "METHOD" is a function inside a class (to perform operations on OBJs -> couple1 & couple2)
+    # in JS this would be -> constructor(respect, communication) {this.respect = respect;}
     def __init__(self, respect_level, communication_status):
         self.respect_level = respect_level
         self.communication_status = communication_status
-
+        
+    # A "METHOD" is a function inside a class (to perform operations on OBJs -> couple1 & couple2)
     def instance_method(self):
         return f"I am an instance method. My values are: {self.respect_level} and {self.communication_status}"
 
@@ -484,5 +489,182 @@ print(couple1.classVariable) # Accessing the class variable
 
 print(couple2.respect_level, couple2.communication_status) # Accessing an attribute
 print(couple2.instance_method()) # Calling a method
+
+print("--------------------------------------------------------------------------------------------")
+
+# Create a Book class with attributes for title, author, and availability.
+class Book():
+    
+    def __init__(self, title, author, available = True):
+        self.title = title
+        self.author = author
+        self.available = available
+
+class Library():
+    
+    def __init__(self):
+        self.books = []
+
+    # Implement methods to add books
+    def add_book(self, book):
+        self.books.append(book)
+
+    # Search for books by title 
+    def search_by_title(self, title):
+        search_title = lambda book: book.title.lower() == title.lower()
+        return list(filter(search_title, self.books))
+
+    # Search for books by author
+    def search_by_author(self, author):
+        # Use lambda to search for books by author
+        search_author = lambda book: book.author.lower() == author.lower()
+        return list(filter(search_author, self.books))
+
+    def update_availability(self, title, available):
+        # Use lambda to update book availability
+        update_book = lambda book: setattr(book, 'available', available) if book.title.lower() == title.lower() else None
+        list(map(update_book, self.books))
+
+
+# Create instances of the Book class
+book1 = Book("Python Programming", "John Smith")
+book2 = Book("Data Structures and Algorithms", "Jane Doe")
+book3 = Book("Web Development with Python", "John Smith")
+
+# Create an instance of the Library class
+library = Library()
+
+# Add books to the library
+library.add_book(book1)
+library.add_book(book2)
+library.add_book(book3)
+
+# Search for books by title
+print("Books with title 'Python Programming':")
+for book in library.search_by_title("Python Programming"):
+    print(f"- {book.title} by {book.author}")
+
+# Search for books by author
+print("\nBooks by author 'John Smith':")
+for book in library.search_by_author("John Smith"):
+    print(f"- {book.title} by {book.author}")
+
+# Update book availability
+library.update_availability("Data Structures and Algorithms", False)
+
+# Check updated availability
+print("\nAvailability of 'Data Structures and Algorithms':")
+for book in library.search_by_title("Data Structures and Algorithms"):
+    print(f"- {book.title} is {'available' if book.available else 'not available'}")
+
+
+print("--------------------------------------------------------------------------------------------")
+
+# Exchange rates
+USD_TO_EUR = 0.85
+USD_TO_GBP = 0.72
+USD_TO_JPY = 110.45
+
+GBP_TO_USD = 1.37
+GBP_TO_EUR = 1.15
+GBP_TO_JPY = 209.43
+
+YEN_TO_EUR = 0.0055
+YEN_TO_GBP = 0.0048
+YEN_TO_USD = 0.0065
+
+# AMERICAN DOLLAR
+def convert_usd_to_eur(amount):
+    return amount * USD_TO_EUR
+
+def convert_usd_to_gbp(amount):
+    return amount * USD_TO_GBP
+
+def convert_usd_to_jpy(amount):
+    return amount * USD_TO_JPY
+
+# BRITISH POUND 
+def convert_gbp_to_eur(amount):
+    return amount * GBP_TO_EUR
+
+def convert_gbp_to_usd(amount):
+    return amount * GBP_TO_USD
+
+def convert_gbp_to_jpy(amount):
+    return amount * GBP_TO_JPY
+    
+# JAPANESE YEN 
+def convert_jpy_to_eur(amount):
+    return amount * YEN_TO_EUR
+    
+def convert_jpy_to_gbp(amount):
+    return amount * YEN_TO_GBP
+
+def convert_jpy_to_usd(amount):
+    return amount * YEN_TO_USD
+
+#----------------------------------
+#----------------------------------
+#----------------------------------
+
+def dollars():
+    usd_amount = 100
+    
+    eur_amount = convert_usd_to_eur(usd_amount)
+    gbp_amount = convert_usd_to_gbp(usd_amount)
+    jpy_amount = convert_usd_to_jpy(usd_amount)
+    
+    print(f"USD {usd_amount} is equal to:")
+    print(f"- EUR {eur_amount}")
+    print(f"- GBP {gbp_amount}")
+    print(f"- JPY {jpy_amount}")
+
+    
+dollars()
+
+#----------------------------------
+#----------------------------------
+#----------------------------------
+
+print("-----------------------")
+
+def pounds():
+    gbp_amount = 100
+    
+    eur_amount = convert_gbp_to_eur(gbp_amount)
+    usd_amount = convert_gbp_to_usd(gbp_amount)
+    jpy_amount = convert_gbp_to_jpy(gbp_amount)
+
+    print(f"GBP {gbp_amount} is equal to:")
+    # :.2f -> round to 2 decimal places:
+    print(f"- EUR {eur_amount:.2f}")
+    print(f"- USD {usd_amount}")
+    print(f"- JPY {jpy_amount}")
+    
+pounds()
+
+#----------------------------------
+#----------------------------------
+#----------------------------------
+
+print("-----------------------")
+
+def yen():
+    jpy_amount = 1000
+    
+    eur_amount = convert_jpy_to_eur(jpy_amount)
+    gbp_amount = convert_jpy_to_gbp(jpy_amount)
+    usd_amount = convert_jpy_to_usd(jpy_amount)
+
+    print(f"JPY {jpy_amount} is equal to:")
+    print(f"- EUR {eur_amount}")
+    print(f"- GBP {gbp_amount}")
+    print(f"- USD {usd_amount}")
+
+yen()
+
+#----------------------------------
+#----------------------------------
+#----------------------------------
 
 print("--------------------------------------------------------------------------------------------")
